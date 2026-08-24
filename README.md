@@ -18,8 +18,9 @@
 ./install.sh
 # ~/.dsh/profiles/web/cordis.patch.yml:
 #   - insert:
-#       - id: session-title
+#       - id: session-title-settings
 #         name: '@wuxie/dsh-session-title'
+# 不要用 id: session-title：dsh-base 已经占用该行。
 # 重启 dsh web（host 半）
 # 刷新页面（设置页）
 ```

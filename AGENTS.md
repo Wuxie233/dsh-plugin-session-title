@@ -24,6 +24,7 @@ dsh 双半插件：设置页改自动取名提示词和可选模型；host 拦�
 - Custom route whose provider is not in `ctx.llm.listProviders()` keeps the conversation route and warns.
 - `session/title-llm-request` is appended before this intercept; it may still show the helper's original system/route.
 - Default prompt is duplicated in host `logic.js` and the browser bundle so the client half does not import host ESM.
+- Profile mount row id is `session-title-settings`, not `session-title`. The base bundle already owns `session-title` (`@deepseek-ai/dsh-session-title`). Inserting the same id crash-loops `dsh-web`.
 
 ## Commands
 

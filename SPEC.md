@@ -85,7 +85,7 @@ Rules:
 
 - `node scripts/policy.test.mjs` covers empty prompt, OpenCode prompt, follow, custom available, custom missing, custom incomplete, frozen-clone contract (policy does not mutate `original`).
 - `node --check lib/client.js`; ESM host files copied to `.mjs` then `--check`.
-- After `./install.sh` and web patch insert: `cd ~/.dsh/profiles/web && node -e "await import('@wuxie/dsh-session-title')"`.
+- After `./install.sh` and a web patch insert of `id: session-title-settings` (not `session-title`; that id belongs to `@deepseek-ai/dsh-session-title`): `cd ~/.dsh/profiles/web && node -e "await import('@wuxie/dsh-session-title')"`.
 - Host intercept clones frozen title requests, replaces system when prompt is set, and does not recurse.
 - Settings page appears under Settings nav; saving prompt/model writes `session-title` in user settings.
 

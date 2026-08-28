@@ -21,7 +21,7 @@ A user opens Settings → 会话标题, pastes or tweaks the OpenCode-style Chin
 - Empty / whitespace-only prompt: do not replace system (DSH built-in English short instruction stays).
 - Restore default: write the OpenCode prompt back. Do not change model selection.
 - Default model mode: follow the current conversation route.
-- Custom model: pick from `api.llm.models` catalog. Persist provider + model.
+- Custom model: pick from `ctx.remote.session.modelCatalog()` groups. Persist provider + model.
 - Custom route missing/disabled at call time: keep the conversation route and `ctx.logger.warn`.
 - Cadence unchanged: first eligible human/automation prompt only (shipped first-prompt provider).
 - Apply only to later title generations.
@@ -78,7 +78,7 @@ Rules:
 - Intro: first-message auto title; later titles unchanged; user rename still pins.
 - Multiline textarea for prompt (persist on blur and 400ms debounce).
 - Restore default button; disabled when prompt already equals the OpenCode default.
-- Model control: first item 跟随对话 / Follow conversation; then catalog groups from `api.llm.models`. Persist immediately.
+- Model control: first item 跟随对话 / Follow conversation; then catalog groups from `ctx.remote.session.modelCatalog()`. Persist immediately.
 - Catalog load failure: keep Follow conversation; show a short error; do not invent routes.
 
 ## Acceptance

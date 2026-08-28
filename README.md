@@ -11,6 +11,7 @@
 - 锁定的路线当时不可用：回退到对话路线，host 打警告。
 - host 拦截 `purpose: 'session-title'` 的 LLM 调用。冻结的 `GenerateOptions` 会克隆后再发，不改原对象。
 - `session/title-llm-request` 仍可能记录 helper 原始 system/route；真正发出去的是克隆后的信封。
+- 设置页模型目录来自 `session/modelCatalog`（`ctx.remote.session.modelCatalog()`），不是已移除的 `connection.api.llm.models`。
 
 ## 安装 / 更新
 

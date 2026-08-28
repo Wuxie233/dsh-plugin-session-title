@@ -25,6 +25,7 @@ dsh 双半插件：设置页改自动取名提示词和可选模型；host 拦�
 - `session/title-llm-request` is appended before this intercept; it may still show the helper's original system/route.
 - Default prompt is duplicated in host `logic.js` and the browser bundle so the client half does not import host ESM.
 - Profile mount row id is `session-title-settings`, not `session-title`. The base bundle already owns `session-title` (`@deepseek-ai/dsh-session-title`). Inserting the same id crash-loops `dsh-web`.
+- Browser `createSnapshotStore` is `@deepseek-ai/dsh-client-store` (platform seed). `@deepseek-ai/dsh-client-runtime/client` is no longer in the module table.
 
 ## Commands
 

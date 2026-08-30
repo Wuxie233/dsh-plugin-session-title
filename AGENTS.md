@@ -13,7 +13,7 @@ dsh 双半插件：设置页改自动取名提示词和可选模型；host 拦�
 
 - Edit → `./install.sh` → restart dsh web（host 半）；刷新页面（浏览器半）。
 - Package name must stay identical in three places: `package.json` `name`, `lib/client.js` `__ModuleLoader__.load({ id })`, and the `cordis.patch.yml` mount row `name`.
-- Client inject: `slots`, `locale`, `connection`, `remote`, `settingsScope`.
+- Client inject: `slots`, `locale`, `connection`, `remote`, `remote.session`, `settingsScope`.
 - Host inject: `llm`. Settings is optional via `ctx.inject(['settings'], …)` plus `ctx.get('settings')`.
 - Browser `require()` only hits PLATFORM_MODULES (`packages/client/web/src/platform.ts`): `react`, `react/jsx-runtime`, `react-dom`, `react-dom/client`, `@deepseek-ai/cordis`, `@deepseek-ai/dsh-client-store`, `@deepseek-ai/dsh-client-ui-slots`, `@deepseek-ai/dsh-client-ui-primitives`.
 

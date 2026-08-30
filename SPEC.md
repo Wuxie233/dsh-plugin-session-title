@@ -39,7 +39,7 @@ A user opens Settings → 会话标题, pastes or tweaks the OpenCode-style Chin
 - Copy-deploy via `install.sh` (never symlink).
 - Package name identical in `package.json` `name`, `lib/client.js` module id, and `cordis.patch.yml` `name`.
 - Browser half: plain JS, `React.createElement`, `window.__ModuleLoader__.load`.
-- Browser `inject`: `slots`, `locale`, `connection`, `remote`, `settingsScope`.
+- Browser `inject`: `slots`, `locale`, `connection`, `remote`, `remote.session`, `settingsScope`.
 - Host `inject` must declare every service it reads (`llm` at least). Settings is optional via `ctx.inject(['settings'], …)` plus `ctx.get('settings')`.
 - Frozen `GenerateOptions`: never mutate. Clone a new object and re-enter `ctx.llm.stream` with a WeakSet reentrancy guard. Always call `next()` for unpatched calls.
 - Visual system: existing DSH settings (`--dsw-*` tokens). Mirror System prompts section spacing/type, not a new brand.

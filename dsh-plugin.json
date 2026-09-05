@@ -1,0 +1,59 @@
+{
+  "$schema": "urn:dsh-std:manifest:0.15",
+  "manifestVersion": "0.15",
+  "id": "dev.starpivot.session-title",
+  "name": "session-title",
+  "version": "0.1.0",
+  "facets": {
+    "host": {
+      "entry": "lib/index.js",
+      "apiVersion": "v1alpha1"
+    }
+  },
+  "requires": {
+    "contracts": []
+  },
+  "permissions": [],
+  "contributes": {
+    "commands": [],
+    "x-dev.dsh-std.extensions": [
+      {
+        "id": "dev.starpivot.session-title.host",
+        "apiVersion": "plugins.starpivot.dev/v1",
+        "kind": "HostPlugin",
+        "name": "dev.starpivot.session-title",
+        "spec": {
+          "services": [
+            "llm",
+            "settings"
+          ]
+        }
+      },
+      {
+        "id": "dev.starpivot.session-title.browser",
+        "apiVersion": "browser.ui.dsh/v1alpha1",
+        "kind": "LocalModule",
+        "name": "dev.starpivot.session-title.browser",
+        "spec": {
+          "module": "lib/client.js",
+          "requirements": [
+            {
+              "apiVersion": "ui.dsh/v1alpha1",
+              "kind": "ContributionHost",
+              "spec": {
+                "surfaces": [
+                  {
+                    "apiVersion": "plugins.starpivot.dev/v1",
+                    "kind": "WebPlugin",
+                    "mode": "local-module"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "subscriptions": []
+}
